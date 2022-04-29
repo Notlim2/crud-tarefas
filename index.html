@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título -->
+    <title>Minhas Tarefas</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header><h1>Minhas Tarefas</h1></header>
+
+      <main>
+        <section class="filters">
+          <button type="button" class="outlined" onclick="renderCreateTask()">
+            Nova Tarefa
+          </button>
+
+          <form onsubmit="filterTasks(event)" class="search-form">
+            <input type="search" id="task-search" placeholder="Pesquisar..." />
+            <button type="submit">Buscar Tarefa</button>
+          </form>
+        </section>
+        <section>
+          <table id="tasks">
+            <thead>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Criado em</th>
+              <th>Finalizado em</th>
+              <th>Ações</th>
+            </thead>
+            <tbody id="tasksBody"></tbody>
+          </table>
+        </section>
+      </main>
+
+      <footer>GambiSoft - Todos os Direitos Reservados</footer>
+    </div>
+
+    <div
+      class="modal"
+      id="new-task-name-modal"
+      onclick="hideCreateOrEditTask()"
+    >
+      <div class="create-task" onclick="event.stopPropagation()">
+        <h3 id="create-task-title">Nova Tarefa</h3>
+        <form onsubmit="handleCreateOrEditTask(event)">
+          <input type="text" id="new-task-name" placeholder="Nome da Tarefa" />
+          <button type="submit">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="messages"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

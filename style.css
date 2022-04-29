@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #dadada;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 8px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  background: #eaeaea;
+}
+
+.container > header h1 {
+  letter-spacing: 4px;
+  border-bottom: solid 2px #555;
+}
+
+.container > main {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.3);
+
+  justify-content: center;
+  align-items: center;
+}
+
+.modal > * {
+  padding: 8px;
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+.modal > .create-task {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modal > .create-task h3 {
+  font-size: 1.4em;
+  border-bottom: solid 2px #555;
+}
+
+button {
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+  background: #007bff;
+  color: #fafafa;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+button.outlined {
+  background: #fafafa;
+  color: #007bff;
+  border: solid 1px #007bff;
+  transition: 0.2s;
+}
+
+button.outlined:hover {
+  background: #007bff;
+  color: #fafafa;
+}
+
+button.success {
+  background: #28a745;
+}
+
+button.danger {
+  background: #dc3545;
+}
+
+input {
+  border: solid 1px #555;
+  outline: none;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 1.1em;
+}
+
+section.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  section.filters > button {
+    flex: 1;
+  }
+}
+
+section.filters > form.search-form {
+  flex-grow: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  section.filters > form.search-form > button {
+    flex-grow: 1;
+  }
+}
+
+section.filters > form.search-form > input {
+  flex-grow: 1;
+}
+
+table#tasks {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table#tasks th,
+table#tasks td {
+  padding: 4px;
+  border-bottom: solid 1px #555;
+  text-align: left;
+}
+
+#messages {
+  position: fixed;
+  bottom: 40px;
+  right: 8px;
+  width: 340px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#messages > .message {
+  padding: 8px;
+  border-radius: 4px;
+  background: #9a9a9a;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+#messages > .message.success {
+  background: #28a745;
+  color: white;
+}
+
+#messages > .message.danger {
+  background: #dc3545;
+  color: white;
+}
+
+footer {
+  background: #555;
+  color: white;
+  font-weight: 600;
+  padding: 8px;
+}
